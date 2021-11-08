@@ -1,4 +1,4 @@
-package lightningrobotics.util;
+package lightningrobotics.sim.util;
 
 import edu.wpi.first.wpilibj.geometry.Pose2d;
 import edu.wpi.first.wpilibj.geometry.Rotation2d;

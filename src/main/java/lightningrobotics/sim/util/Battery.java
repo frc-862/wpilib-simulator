@@ -1,4 +1,4 @@
-package lightningrobotics.util;
+package lightningrobotics.sim.util;
 
 import edu.wpi.first.wpilibj.RobotController;
 import edu.wpi.first.wpilibj.simulation.BatterySim;

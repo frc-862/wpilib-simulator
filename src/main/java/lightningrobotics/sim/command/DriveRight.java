@@ -2,12 +2,12 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-package lightningrobotics.command;
+package lightningrobotics.sim.command;
 
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import lightningrobotics.subsystem.Drivetrain;
+import lightningrobotics.sim.subsystem.Drivetrain;
 
 public class DriveRight extends CommandBase{
   /** Creates a new ExampleCommand. */
@@ -26,7 +26,7 @@ public class DriveRight extends CommandBase{
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    drivetrain.SetVoltage(5, 5);
+    drivetrain.setVelocity(4, -4);
   }
 
   // Called once the command ends or is interrupted.

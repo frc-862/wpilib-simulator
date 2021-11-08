@@ -3,7 +3,7 @@ plugins {
     id "edu.wpi.first.GradleRIO" version "2021.1.2"
 }
 
-def ROBOT_MAIN_CLASS = "lightningrobotics.Main"
+def ROBOT_MAIN_CLASS = "lightningrobotics.sim.Main"
 
 // Define my targets (RoboRIO) and artifacts (deployable files)
 // This is added by GradleRIO's backing project EmbeddedTools.
@@ -34,6 +34,17 @@ deploy {
     }
 }
 
+repositories {
+    maven {
+        name = "GitHubPackages"
+        url = "https://maven.pkg.github.com/frc-862/lightning"
+        credentials {
+            username = project.findProperty("gpr.user")
+            password = project.findProperty("gpr.key")
+        }
+    }
+}
+
 // Defining my dependencies. In this case, WPILib (+ friends), and vendor libraries.
 // Also defines JUnit 4.
 dependencies {
@@ -45,10 +56,10 @@ dependencies {
     implementation wpi.deps.vendor.java()
     nativeZip wpi.deps.vendor.jni(wpi.platforms.roborio)
     nativeDesktopZip wpi.deps.vendor.jni(wpi.platforms.desktop)
+    implementation 'frc:lightning:0.0.0-beta2'
 
     // In Java for now, the argument must be false
     simulation wpi.deps.sim.gui(wpi.platforms.desktop, false)
-
     testImplementation 'junit:junit:4.12'
 }
 

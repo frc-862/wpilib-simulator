@@ -1,4 +1,4 @@
-package lightningrobotics;
+package lightningrobotics.sim;
 
 import edu.wpi.first.wpilibj.system.plant.DCMotor;
 import edu.wpi.first.wpilibj.util.Units;
@@ -12,6 +12,7 @@ public final class SimulationConstants {
     public static final double TRACK_WIDTH = 0.7712; //meter
     public static final double MOI = 7.5; //Moment of inertia, J * kg * m^2
 
+    public static final double MAX_INPUT_VOLTAGE = 12;
      // The standard deviations for measurement noise:
       // x and y:          meters
       // heading:          rad

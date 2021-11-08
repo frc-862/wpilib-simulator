@@ -5,7 +5,7 @@
 * autonomousPeriodic function and change the NetworkTables update rate
 */
 
-package lightningrobotics;
+package lightningrobotics.sim;
 
 import java.util.stream.IntStream;
 
@@ -24,9 +24,9 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.WaitUntilCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
-import lightningrobotics.command.DriveRight;
-import lightningrobotics.subsystem.Drivetrain;
-import lightningrobotics.util.FieldController;
+import lightningrobotics.sim.command.DriveRight;
+import lightningrobotics.sim.subsystem.Drivetrain;
+import lightningrobotics.sim.util.FieldController;
 
 public class Robot extends TimedRobot {
   

@@ -1,4 +1,4 @@
-package lightningrobotics;
+package lightningrobotics.sim;
 
 import edu.wpi.first.wpilibj.RobotBase;
 
