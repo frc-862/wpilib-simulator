@@ -4,29 +4,26 @@
 
 package lightningrobotics.sim.command;
 
-import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import lightningrobotics.sim.subsystem.Drivetrain;
+import lightningrobotics.sim.subsystem.Elevator;
 
-public class DriveRight extends CommandBase{
-  /** Creates a new ExampleCommand. */
-  private Drivetrain drivetrain;
-  public DriveRight(Drivetrain drivetrain) {
+public class MoveElevator extends CommandBase {
+  /** Creates a new MoveElevator. */
+  private Elevator elevator;
+  public MoveElevator(Elevator elevator) {
+    this.elevator = elevator;
     // Use addRequirements() here to declare subsystem dependencies.
-    this.drivetrain = drivetrain;
-    addRequirements(drivetrain);
+    addRequirements(elevator);
   }
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {
-  }
+  public void initialize() {}
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    drivetrain.setVelocity(4, 4);
+    elevator.setVoltage(20d);
   }
 
   // Called once the command ends or is interrupted.
