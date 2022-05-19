@@ -35,9 +35,8 @@ import lightningrobotics.sim.util.FieldController;
 public class Robot extends TimedRobot {
   
   private static final Drivetrain drivetrain = new Drivetrain();
-  private static final Elevator elevator = new Elevator(DCMotor.getVex775Pro(4), 10, 4, Units.inchesToMeters(2.0), Units.inchesToMeters(2), Units.inchesToMeters(50));
-
-
+  private static final Elevator elevator = new Elevator(DCMotor.getVex775Pro(4), 10, 20, Units.inchesToMeters(2.0), Units.inchesToMeters(2), Units.inchesToMeters(50));
+  
   @Override
   public void testInit() {
   

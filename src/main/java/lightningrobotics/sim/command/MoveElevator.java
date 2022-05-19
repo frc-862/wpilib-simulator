@@ -4,15 +4,16 @@
 
 package lightningrobotics.sim.command;
 
+import edu.wpi.first.math.util.Units;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import lightningrobotics.sim.subsystem.Elevator;
 
 public class MoveElevator extends CommandBase {
   /** Creates a new MoveElevator. */
   private Elevator elevator;
+
   public MoveElevator(Elevator elevator) {
     this.elevator = elevator;
-    // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(elevator);
   }
 
@@ -23,16 +24,18 @@ public class MoveElevator extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    elevator.setVoltage(20d);
+    elevator.setVoltage(200d);
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    elevator.stop();
+  }
 
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return false;
+    return elevator.getHeight() > Units.inchesToMeters(50);
   }
 }

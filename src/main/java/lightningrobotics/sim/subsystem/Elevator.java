@@ -32,6 +32,7 @@ public class Elevator extends SubsystemBase {
   private final Mechanism2d m_mech2d = new Mechanism2d(20, 50);
   private final MechanismRoot2d m_mech2dRoot = m_mech2d.getRoot("Elevator Root", 10, 0);
   private MechanismLigament2d m_elevatorMech2d;
+
   /** Creates a new Elevator. */
   public Elevator(DCMotor elevatorMotor, double gearing, double carriageMassKg, double drumRadiusMeters, double minHeightMeters, double maxHeightMeters) {
     m_elevatorSim =
@@ -71,7 +72,7 @@ public class Elevator extends SubsystemBase {
         BatterySim.calculateDefaultBatteryLoadedVoltage(m_elevatorSim.getCurrentDrawAmps()));
 
     // Update elevator visualization with simulated position
-     m_elevatorMech2d.setLength(Units.metersToInches(m_elevatorSim.getPositionMeters()));
+    m_elevatorMech2d.setLength(Units.metersToInches(m_elevatorSim.getPositionMeters()));
   }
   
   public void setVoltage(double voltage) {
@@ -80,6 +81,10 @@ public class Elevator extends SubsystemBase {
 
   public void stop() {
     setVoltage(0);
+  }
+
+  public double getHeight() {
+    return m_elevatorSim.getPositionMeters();
   }
 
 }

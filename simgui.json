@@ -14,6 +14,17 @@
       "window": {
         "visible": true
       }
+    },
+    "RoboRIO": {
+      "6V Rail": {
+        "open": true
+      },
+      "RoboRIO Input": {
+        "open": true
+      },
+      "window": {
+        "visible": true
+      }
     }
   },
   "NTProvider": {
@@ -37,6 +48,11 @@
           "visible": true
         }
       },
+      "/SmartDashboard/Field": {
+        "window": {
+          "visible": true
+        }
+      },
       "/SmartDashboard/LIFT!!!": {
         "window": {
           "visible": true
@@ -48,5 +64,8 @@
         }
       }
     }
+  },
+  "NetworkTables View": {
+    "visible": false
   }
 }
