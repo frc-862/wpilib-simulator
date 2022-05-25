@@ -8,12 +8,12 @@ import edu.wpi.first.math.util.Units;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import lightningrobotics.sim.subsystem.Elevator;
 
-public class OscilateElevator extends CommandBase {
+public class OscillateElevator extends CommandBase {
   /** Creates a new MoveElevator. */
   private Elevator elevator;
   private static boolean elevatorMovingDown = false;
 
-  public OscilateElevator(Elevator elevator) {
+  public OscillateElevator(Elevator elevator) {
     this.elevator = elevator;
     addRequirements(elevator);
   }
