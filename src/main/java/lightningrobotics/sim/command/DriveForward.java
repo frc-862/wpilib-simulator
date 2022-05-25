@@ -9,10 +9,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import lightningrobotics.sim.subsystem.Drivetrain;
 
-public class DriveRight extends CommandBase{
+public class DriveForward extends CommandBase{
   /** Creates a new ExampleCommand. */
   private Drivetrain drivetrain;
-  public DriveRight(Drivetrain drivetrain) {
+  public DriveForward(Drivetrain drivetrain) {
     // Use addRequirements() here to declare subsystem dependencies.
     this.drivetrain = drivetrain;
     addRequirements(drivetrain);

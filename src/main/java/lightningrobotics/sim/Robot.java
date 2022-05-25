@@ -26,7 +26,7 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.WaitUntilCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
-import lightningrobotics.sim.command.DriveRight;
+import lightningrobotics.sim.command.DriveForward;
 import lightningrobotics.sim.command.OscillateElevator;
 import lightningrobotics.sim.subsystem.Drivetrain;
 import lightningrobotics.sim.subsystem.Elevator;
@@ -35,8 +35,9 @@ import lightningrobotics.sim.util.FieldController;
 public class Robot extends TimedRobot {
   
   private static final Drivetrain drivetrain = new Drivetrain();
-  private static final Elevator elevator = new Elevator(DCMotor.getVex775Pro(4), 10, 20, Units.inchesToMeters(2.0), Units.inchesToMeters(2), Units.inchesToMeters(50));
-  
+  private static final Elevator elevator = new Elevator(DCMotor.getVex775Pro(4), 10, 4, Units.inchesToMeters(2.0), Units.inchesToMeters(2), Units.inchesToMeters(50));
+
+
   @Override
   public void testInit() {
   
@@ -61,7 +62,7 @@ public class Robot extends TimedRobot {
     // Add field to dashboard
     FieldController.Initialize();
 
-    SmartDashboard.putData("To the Right", new DriveRight(drivetrain));
+    SmartDashboard.putData("To the Right", new DriveForward(drivetrain));
     SmartDashboard.putData("LIFT!!!", new OscillateElevator(elevator));
   }
 
