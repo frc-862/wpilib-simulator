@@ -8,11 +8,12 @@ import edu.wpi.first.math.util.Units;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import lightningrobotics.sim.subsystem.Elevator;
 
-public class MoveElevator extends CommandBase {
+public class OscilateElevator extends CommandBase {
   /** Creates a new MoveElevator. */
   private Elevator elevator;
+  private static boolean elevatorMovingDown = false;
 
-  public MoveElevator(Elevator elevator) {
+  public OscilateElevator(Elevator elevator) {
     this.elevator = elevator;
     addRequirements(elevator);
   }
@@ -24,7 +25,13 @@ public class MoveElevator extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    elevator.setVoltage(200d);
+    if (!elevatorMovingDown) {
+      elevator.setVoltage(20d);
+      if (elevator.getHeight() > Units.inchesToMeters(47)) { elevatorMovingDown = true; }
+    } else {
+      elevator.stop();
+      if (elevator.getHeight() < Units.inchesToMeters(3)) { elevatorMovingDown = false; }
+    }
   }
 
   // Called once the command ends or is interrupted.
@@ -36,6 +43,6 @@ public class MoveElevator extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return elevator.getHeight() > Units.inchesToMeters(50);
+    return false;
   }
 }

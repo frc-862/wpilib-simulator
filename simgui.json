@@ -1,27 +1,11 @@
 {
   "HALProvider": {
     "Encoders": {
-      "2": {
-        "header": {
-          "open": true
-        }
-      },
       "window": {
         "visible": true
       }
     },
     "PWM Outputs": {
-      "window": {
-        "visible": true
-      }
-    },
-    "RoboRIO": {
-      "6V Rail": {
-        "open": true
-      },
-      "RoboRIO Input": {
-        "open": true
-      },
       "window": {
         "visible": true
       }
@@ -35,21 +19,20 @@
       "/SmartDashboard/Elevator Sim": "Mechanism2d",
       "/SmartDashboard/Field": "Field2d",
       "/SmartDashboard/LIFT!!!": "Command",
-      "/SmartDashboard/To the Right": "Command"
+      "/SmartDashboard/Right side robot drive": "Command",
+      "/SmartDashboard/To the Right": "Command",
+      "/SmartDashboard/trajectory test": "Command"
     },
     "windows": {
-      "/LiveWindow/Elevator": {
-        "window": {
-          "visible": true
-        }
-      },
       "/SmartDashboard/Elevator Sim": {
         "window": {
           "visible": true
         }
       },
       "/SmartDashboard/Field": {
+        "image": "D:\\2022-field.png",
         "window": {
+          "name": "Rapid React",
           "visible": true
         }
       },
@@ -58,14 +41,16 @@
           "visible": true
         }
       },
-      "/SmartDashboard/To the Right": {
+      "/SmartDashboard/Right side robot drive": {
+        "window": {
+          "visible": true
+        }
+      },
+      "/SmartDashboard/trajectory test": {
         "window": {
           "visible": true
         }
       }
     }
-  },
-  "NetworkTables View": {
-    "visible": false
   }
 }

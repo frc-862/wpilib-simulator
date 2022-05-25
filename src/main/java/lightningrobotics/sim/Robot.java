@@ -27,7 +27,7 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.WaitUntilCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import lightningrobotics.sim.command.DriveRight;
-import lightningrobotics.sim.command.MoveElevator;
+import lightningrobotics.sim.command.OscilateElevator;
 import lightningrobotics.sim.subsystem.Drivetrain;
 import lightningrobotics.sim.subsystem.Elevator;
 import lightningrobotics.sim.util.FieldController;
@@ -62,7 +62,7 @@ public class Robot extends TimedRobot {
     FieldController.Initialize();
 
     SmartDashboard.putData("To the Right", new DriveRight(drivetrain));
-    SmartDashboard.putData("LIFT!!!", new MoveElevator(elevator));
+    SmartDashboard.putData("LIFT!!!", new OscilateElevator(elevator));
   }
 
   @Override
