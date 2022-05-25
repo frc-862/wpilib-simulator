@@ -14,7 +14,7 @@ public class DriveRight extends CommandBase{
   private Drivetrain drivetrain;
   public DriveRight(Drivetrain drivetrain) {
     // Use addRequirements() here to declare subsystem dependencies.
-    this.drivetrain =drivetrain;
+    this.drivetrain = drivetrain;
     addRequirements(drivetrain);
   }
 
@@ -26,7 +26,7 @@ public class DriveRight extends CommandBase{
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    drivetrain.setVelocity(4, -4);
+    drivetrain.setVelocity(4, 4);
   }
 
   // Called once the command ends or is interrupted.

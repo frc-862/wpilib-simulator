@@ -1,10 +1,9 @@
 package lightningrobotics.sim;
 
-import edu.wpi.first.wpilibj.system.plant.DCMotor;
-import edu.wpi.first.wpilibj.util.Units;
-import edu.wpi.first.wpiutil.math.VecBuilder;
-import edu.wpi.first.wpiutil.math.Vector;
-import edu.wpi.first.wpiutil.math.numbers.N7;
+import edu.wpi.first.math.VecBuilder;
+import edu.wpi.first.math.Vector;
+import edu.wpi.first.math.numbers.N7;
+import edu.wpi.first.math.util.Units;
 
 public final class SimulationConstants {
     public static final double ROBOT_MASS = 60.0; //kg
@@ -22,4 +21,6 @@ public final class SimulationConstants {
     VecBuilder.fill(0.001, 0.001, 0.001, 0.1, 0.1, 0.005, 0.005); 
 
     public static double SIM_UPDATE_TIME = 0.02d;
+
+    public static final int ELEVATOR_PORT = 1;
 }
