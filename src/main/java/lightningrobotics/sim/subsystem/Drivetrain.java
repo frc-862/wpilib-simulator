@@ -47,10 +47,6 @@ public class Drivetrain extends SubsystemBase {
       SimulationConstants.TRACK_WIDTH,       
       SimulationConstants.MEASUREMENT_NOISE);
 
-      SmartDashboard.putNumber("left Kp", 0);
-      SmartDashboard.putNumber("left Ki", 0);
-      SmartDashboard.putNumber("left Kd", 0);
-
       odometry = 
       new DifferentialDriveOdometry(new Rotation2d(), new Pose2d(0,0,new Rotation2d()));
   }
@@ -81,22 +77,11 @@ public class Drivetrain extends SubsystemBase {
    */ 
   
   public void setVelocity(double leftVelocity, double rightVelocity){
-    var kp = SmartDashboard.getNumber("left Kp", 0);
-    var ki = SmartDashboard.getNumber("left Ki", 0);
-    var kd = SmartDashboard.getNumber("left Kd", 0);
-    leftPidfController.setkP(kp);
-    leftPidfController.setkI(ki);
-    leftPidfController.setkD(kd);
-
     var leftMeasurement =leftEncoderSim.getRate();
     var rightMeasurement = rightEncoderSim.getRate();
     var leftInput = leftPidfController.calculate(leftMeasurement, leftVelocity);
     var rightInput = rightPidfController.calculate(rightMeasurement, rightVelocity);
     setPercentInput(leftInput, rightInput);
-
-    SmartDashboard.putNumber("PID Measured Velocity", leftMeasurement);
-    SmartDashboard.putNumber("PID Input Voltage", leftInput);
-    SmartDashboard.putNumber("PID Set Velocity", leftVelocity);
   }
 
   private void updateOdometry(){
